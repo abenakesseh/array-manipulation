@@ -1,0 +1,5 @@
+﻿  TestScores.cpp
+c:\users\absya\source\repos\programming2 assignments\programming2 assignments\testscores.cpp(143): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\absya\source\repos\programming2 assignments\programming2 assignments\testscores.cpp(164): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\absya\source\repos\programming2 assignments\programming2 assignments\testscores.cpp(56): error C4700: uninitialized local variable 'testNumber' used
+c:\users\absya\source\repos\programming2 assignments\programming2 assignments\testscores.cpp(64): error C4700: uninitialized local variable 'studentNumber' used
