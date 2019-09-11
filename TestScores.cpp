@@ -39,6 +39,9 @@ int topStudent(const int scores[][NUM_TESTS]);
 
 //*****************************************************************************************************
 
+void wait();
+
+//*****************************************************************************************************
 int main()
 {
 	int testScores[10][8];
@@ -50,23 +53,26 @@ int main()
 	readTestScores(tests, testScores);
 
 	displayTestScores(testScores);
-	cout << "Press Enter to continue";
-	cin.get();
+	wait();
 
-	totalOneTest(testScores, testNumber);
-	cout << "Enter test number" << endl;
-	cin >> testNumber;
 
-	cout << "Total for Test # " << testNumber << " is: " << total << endl;
-	cout << "Press Enter to continue";
-	cin.get();
+    cout << "Enter test number" << endl;
+    cin>>testNumber;
+    cout << "Total for Test # " << testNumber << " is: " << totalOneTest(testScores, testNumber) << endl;
+    wait();
 
-	totalOneStudent(testScores, studentNumber);
-	cout << "Total for Student # " << studentNumber << " is: " << total << endl;
-	cout << "Press Enter to continue";
-	cin.get();
 
-}
+    cout<<"Enter Student Number"<<endl;
+    cin>>studentNumber;
+	cout << "Total for Student # " << studentNumber << " is: " << totalOneStudent(testScores, studentNumber) << endl;
+	wait();
+
+
+	/*cout<<"Enter Test Number"<<endl;
+    cin>>testNumber;
+    cout<<"Average Scores for Test # "<<testNumber<<" is: "<<averageOneTest(testScores, testNumber)<<endl;
+    wait();*/
+    }
 
 //*****************************************************************************************************
 
@@ -105,7 +111,7 @@ int totalOneTest(const int scores[][NUM_TESTS], int testNumber)
 	{
 		total += scores[i][testNumber];
 	}
-	
+
 	return total;
 }
 
@@ -126,7 +132,7 @@ int totalOneStudent(const int scores[][NUM_TESTS], int studentNumber)
 
 float averageOneTest(const int scores[][NUM_TESTS], int testNumber)
 {
-	double average;
+	float average;
 	int total = 0;
 
 	for (int i = 0; i < 8; i++)
@@ -135,10 +141,9 @@ float averageOneTest(const int scores[][NUM_TESTS], int testNumber)
 	}
 
 	average = total / 8.0;
-	cout << "Average for Test #" << testNumber << "is: " << average << endl;
-
+	/*cout << "Average for Test #" << testNumber << "is: " << average << endl;
 	cout << "Press Enter to continue";
-	cin.get();
+	cin.get();*/
 
 	return average;
 }
@@ -166,6 +171,13 @@ float averageOneStudent(const int scores[][NUM_TESTS], int studentNumber)
 
 //*****************************************************************************************************
 
+void wait(){
+    cout<<"Press Enter to Continue"<<endl;
+    cin.get();
+}
+
+
+//*****************************************************************************************************
 int highestOneStudent(const int scores[][NUM_TESTS], int studentNumber)
 {
 	int highest = 0;
